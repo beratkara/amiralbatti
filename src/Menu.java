@@ -17,14 +17,6 @@ public class Menu extends Game{
 		
 		System.out.print("Enter user name : ");
 		username = reader.next();
-		if(!user.isUsernameChecker(username))
-		{
-			System.out.println("Wrong Username !");
-			StartMenu(pointer);
-			return;
-		}
-		
-		user.setUsername(username); // set user class username
 		
 		StartMenu(pointer);
 		
@@ -34,6 +26,15 @@ public class Menu extends Game{
 	{
 		if(pointer == 1)
 		{
+			if(!user.isUsernameChecker(username))
+			{
+				System.out.println("Wrong Username !");
+				StartMenu(pointer);
+				return;
+			}
+			
+			user.setUsername(username); // set user class username
+			
 			user.getUserPlayed(user.getUsername());//last game win count get txt
 			
 			int playCounter = user.getPlayed();
@@ -67,9 +68,6 @@ public class Menu extends Game{
 		}
 		else if(pointer == 2)
 		{
-			System.out.print("Enter user name : ");
-			username = reader.next();
-			
 			int playCounter = 0;
 			user.setUsername(username);
 			user.setLevel(differ.Easy);

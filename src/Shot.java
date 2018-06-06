@@ -73,6 +73,8 @@ public class Shot extends Game {
 		
 		if(type > -1)
 			System.out.println("You just sank a " + ship.getType(type));
+		else
+			System.out.println("Missed Shot");
 	}
 	
 }
